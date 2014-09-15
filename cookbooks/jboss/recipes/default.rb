@@ -36,6 +36,6 @@ end
 
 execute "runjboss" do
 cwd "#{jboss_home}/jboss-as-7.1.1.Final/bin"
-command "bash standalone.sh"
+command "nohup 'bash standalone.sh' &"
 action :run
 end
