@@ -1,0 +1,258 @@
+[2014-09-15T06:27:01+00:00] INFO: Forking chef instance to converge...
+[2014-09-15T06:27:01+00:00] DEBUG: Fork successful. Waiting for new chef pid: 2439
+[2014-09-15T06:27:01+00:00] DEBUG: Forked instance now converging
+[2014-09-15T06:27:01+00:00] WARN: 
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+SSL validation of HTTPS requests is disabled. HTTPS connections are still
+encrypted, but chef is not able to detect forged replies or man in the middle
+attacks.
+
+To fix this issue add an entry like this to your configuration file:
+
+```
+  # Verify all HTTPS connections (recommended)
+  ssl_verify_mode :verify_peer
+
+  # OR, Verify only connections to chef-server
+  verify_api_cert true
+```
+
+To check your SSL configuration, or troubleshoot errors, you can use the
+`knife ssl check` command like so:
+
+```
+  knife ssl check -c .chef/solo.rb
+```
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+[2014-09-15T06:27:01+00:00] INFO: *** Chef 11.14.6 ***
+[2014-09-15T06:27:01+00:00] INFO: Chef-client pid: 2439
+[2014-09-15T06:27:01+00:00] DEBUG: Chef-client request_id: 44c463dd-040c-4a6e-8cf1-04beecede16c
+[2014-09-15T06:27:02+00:00] DEBUG: Building node object for epbyminw3088chef
+[2014-09-15T06:27:02+00:00] DEBUG: Extracting run list from JSON attributes provided on command line
+[2014-09-15T06:27:02+00:00] INFO: Setting the run_list to ["recipe[jboss::default]"] from CLI options
+[2014-09-15T06:27:02+00:00] DEBUG: Applying attributes from json file
+[2014-09-15T06:27:02+00:00] DEBUG: Platform is centos version 6.5
+[2014-09-15T06:27:02+00:00] INFO: Run List is [recipe[jboss::default]]
+[2014-09-15T06:27:02+00:00] INFO: Run List expands to [jboss::default]
+[2014-09-15T06:27:02+00:00] INFO: Starting Chef Run for epbyminw3088chef
+[2014-09-15T06:27:02+00:00] INFO: Running start handlers
+[2014-09-15T06:27:02+00:00] INFO: Start handlers complete.
+[2014-09-15T06:27:02+00:00] DEBUG: Cookbooks to compile: [:jdk, :unzip, :jboss]
+[2014-09-15T06:27:02+00:00] DEBUG: Node epbyminw3088chef loading cookbook jboss's attribute file /root/chef-repo/cookbooks/jboss/attributes/default.rb
+[2014-09-15T06:27:02+00:00] DEBUG: Loading Attribute jboss::default
+[2014-09-15T06:27:02+00:00] DEBUG: Loading Recipe jboss::default via include_recipe
+[2014-09-15T06:27:02+00:00] DEBUG: Found recipe default in cookbook jboss
+[2014-09-15T06:27:02+00:00] DEBUG: Loading from cookbook_path: /root/chef-repo/cookbooks
+[2014-09-15T06:27:02+00:00] DEBUG: Converging node epbyminw3088chef
+[2014-09-15T06:27:02+00:00] INFO: Processing user[jboss] action create (jboss::default line 12)
+[2014-09-15T06:27:02+00:00] INFO: Processing directory[/opt/jboss] action create (jboss::default line 18)
+[2014-09-15T06:27:02+00:00] DEBUG: found target_mode == current_mode, not updating mode
+[2014-09-15T06:27:02+00:00] DEBUG: found target_uid == current_uid, not updating owner
+[2014-09-15T06:27:02+00:00] DEBUG: found target_gid == current_gid, not updating group
+[2014-09-15T06:27:02+00:00] INFO: Processing remote_file[/tmp/jboss.zip] action create (jboss::default line 25)
+[2014-09-15T06:27:02+00:00] DEBUG: remote_file[/tmp/jboss.zip] checksumming file at /tmp/jboss.zip.
+[2014-09-15T06:27:04+00:00] DEBUG: remote_file[/tmp/jboss.zip] checking for changes
+[2014-09-15T06:27:04+00:00] DEBUG: Cache control headers: {"if-modified-since"=>"Fri, 12 Sep 2014 09:17:07 GMT", "if-none-match"=>"\"160a4a0-7f15023-4bade17c2efc0\""}
+[2014-09-15T06:27:04+00:00] DEBUG: Chef::HTTP calling Chef::HTTP::Decompressor#handle_request
+[2014-09-15T06:27:04+00:00] DEBUG: Chef::HTTP calling Chef::HTTP::CookieManager#handle_request
+[2014-09-15T06:27:04+00:00] DEBUG: Chef::HTTP calling Chef::HTTP::ValidateContentLength#handle_request
+[2014-09-15T06:27:04+00:00] DEBUG: Initiating GET to http://download.jboss.org/jbossas/7.1/jboss-as-7.1.1.Final/jboss-as-7.1.1.Final.zip
+[2014-09-15T06:27:04+00:00] DEBUG: ---- HTTP Request Header Data: ----
+[2014-09-15T06:27:04+00:00] DEBUG: if-modified-since: Fri, 12 Sep 2014 09:17:07 GMT
+[2014-09-15T06:27:04+00:00] DEBUG: if-none-match: "160a4a0-7f15023-4bade17c2efc0"
+[2014-09-15T06:27:04+00:00] DEBUG: Accept-Encoding: gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+[2014-09-15T06:27:04+00:00] DEBUG: ---- End HTTP Request Header Data ----
+[2014-09-15T06:27:04+00:00] DEBUG: ---- HTTP Status and Header Data: ----
+[2014-09-15T06:27:04+00:00] DEBUG: HTTP 1.1 304 Not Modified
+[2014-09-15T06:27:04+00:00] DEBUG: content-type: application/zip
+[2014-09-15T06:27:04+00:00] DEBUG: last-modified: Sat, 10 Mar 2012 07:02:31 GMT
+[2014-09-15T06:27:04+00:00] DEBUG: etag: "160a4a0-7f15023-4bade17c2efc0"
+[2014-09-15T06:27:04+00:00] DEBUG: date: Mon, 15 Sep 2014 06:27:05 GMT
+[2014-09-15T06:27:04+00:00] DEBUG: connection: close
+[2014-09-15T06:27:04+00:00] DEBUG: ---- End HTTP Status/Header Data ----
+[2014-09-15T06:27:04+00:00] DEBUG: Chef::HTTP calling Chef::HTTP::ValidateContentLength#handle_stream_complete
+[2014-09-15T06:27:04+00:00] DEBUG: No content-length information collected for the streamed download, cannot identify streamed download.
+[2014-09-15T06:27:04+00:00] DEBUG: Chef::HTTP calling Chef::HTTP::CookieManager#handle_stream_complete
+[2014-09-15T06:27:04+00:00] DEBUG: Chef::HTTP calling Chef::HTTP::Decompressor#handle_stream_complete
+[2014-09-15T06:27:04+00:00] DEBUG: found target_mode == nil, so no mode was specified on resource, not managing mode
+[2014-09-15T06:27:04+00:00] DEBUG: found target_uid == nil, so no owner was specified on resource, not managing owner
+[2014-09-15T06:27:04+00:00] DEBUG: found target_gid == nil, so no group was specified on resource, not managing group
+[2014-09-15T06:27:04+00:00] INFO: Processing execute[unzip-jboss] action nothing (jboss::default line 31)
+[2014-09-15T06:27:04+00:00] DEBUG: Skipping execute[unzip-jboss] due to action :nothing
+[2014-09-15T06:27:04+00:00] INFO: Processing execute[runjboss] action run (jboss::default line 37)
+[0m
+================================================================================[0m
+[31mError executing action `run` on resource 'execute[runjboss]'[0m
+================================================================================[0m
+
+[0mMixlib::ShellOut::ShellCommandFailed[0m
+------------------------------------[0m
+Expected process to exit with [0], but received '127'
+[0m---- Begin output of bash standalone.sh ----
+[0mSTDOUT: =========================================================================
+[0m
+[0m  JBoss Bootstrap Environment
+[0m
+[0m  JBOSS_HOME: /opt/jboss/jboss-as-7.1.1.Final
+[0m
+[0m  JAVA: java
+[0m
+[0m  JAVA_OPTS:  -server -Xms64m -Xmx512m -XX:MaxPermSize=256m -Djava.net.preferIPv4Stack=true -Dorg.jboss.resolver.warning=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Djboss.server.default.config=standalone.xml
+[0m
+[0m=========================================================================
+[0mSTDERR: standalone.sh: line 178: java: command not found
+[0m---- End output of bash standalone.sh ----
+[0mRan bash standalone.sh returned 127[0m
+
+[0mResource Declaration:[0m
+---------------------[0m
+# In /root/chef-repo/cookbooks/jboss/recipes/default.rb
+[0m
+[0m 37: execute "runjboss" do
+[0m 38: cwd "#{jboss_home}/jboss-as-7.1.1.Final/bin"
+[0m 39: command "bash standalone.sh"
+[0m 40: action :run
+[0m 41: end[0m
+
+[0mCompiled Resource:[0m
+------------------[0m
+# Declared in /root/chef-repo/cookbooks/jboss/recipes/default.rb:37:in `from_file'
+[0m
+[0mexecute("runjboss") do
+[0m  action [:run]
+[0m  retries 0
+[0m  retry_delay 2
+[0m  guard_interpreter :default
+[0m  command "bash standalone.sh"
+[0m  backup 5
+[0m  cwd "/opt/jboss/jboss-as-7.1.1.Final/bin"
+[0m  returns 0
+[0m  cookbook_name :jboss
+[0m  recipe_name "default"
+[0mend
+[0m
+[0m[2014-09-15T06:27:04+00:00] INFO: Running queued delayed notifications before re-raising exception
+[2014-09-15T06:27:04+00:00] DEBUG: Re-raising exception: Mixlib::ShellOut::ShellCommandFailed - execute[runjboss] (jboss::default line 37) had an error: Mixlib::ShellOut::ShellCommandFailed: Expected process to exit with [0], but received '127'
+---- Begin output of bash standalone.sh ----
+STDOUT: =========================================================================
+
+  JBoss Bootstrap Environment
+
+  JBOSS_HOME: /opt/jboss/jboss-as-7.1.1.Final
+
+  JAVA: java
+
+  JAVA_OPTS:  -server -Xms64m -Xmx512m -XX:MaxPermSize=256m -Djava.net.preferIPv4Stack=true -Dorg.jboss.resolver.warning=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Djboss.server.default.config=standalone.xml
+
+=========================================================================
+STDERR: standalone.sh: line 178: java: command not found
+---- End output of bash standalone.sh ----
+Ran bash standalone.sh returned 127
+/opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/mixlib-shellout-1.4.0/lib/mixlib/shellout.rb:257:in `invalid!'
+  /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/mixlib-shellout-1.4.0/lib/mixlib/shellout.rb:244:in `error!'
+  /opt/chefdk/embedded/apps/chef/lib/chef/mixin/shell_out.rb:43:in `shell_out!'
+  /opt/chefdk/embedded/apps/chef/lib/chef/provider/execute.rb:60:in `block in action_run'
+  /opt/chefdk/embedded/apps/chef/lib/chef/mixin/why_run.rb:52:in `call'
+  /opt/chefdk/embedded/apps/chef/lib/chef/mixin/why_run.rb:52:in `add_action'
+  /opt/chefdk/embedded/apps/chef/lib/chef/provider.rb:156:in `converge_by'
+  /opt/chefdk/embedded/apps/chef/lib/chef/provider/execute.rb:59:in `action_run'
+  /opt/chefdk/embedded/apps/chef/lib/chef/provider.rb:121:in `run_action'
+  /opt/chefdk/embedded/apps/chef/lib/chef/resource.rb:648:in `run_action'
+  /opt/chefdk/embedded/apps/chef/lib/chef/runner.rb:49:in `run_action'
+  /opt/chefdk/embedded/apps/chef/lib/chef/runner.rb:81:in `block (2 levels) in converge'
+  /opt/chefdk/embedded/apps/chef/lib/chef/runner.rb:81:in `each'
+  /opt/chefdk/embedded/apps/chef/lib/chef/runner.rb:81:in `block in converge'
+  /opt/chefdk/embedded/apps/chef/lib/chef/resource_collection.rb:98:in `block in execute_each_resource'
+  /opt/chefdk/embedded/apps/chef/lib/chef/resource_collection/stepable_iterator.rb:116:in `call'
+  /opt/chefdk/embedded/apps/chef/lib/chef/resource_collection/stepable_iterator.rb:116:in `call_iterator_block'
+  /opt/chefdk/embedded/apps/chef/lib/chef/resource_collection/stepable_iterator.rb:85:in `step'
+  /opt/chefdk/embedded/apps/chef/lib/chef/resource_collection/stepable_iterator.rb:104:in `iterate'
+  /opt/chefdk/embedded/apps/chef/lib/chef/resource_collection/stepable_iterator.rb:55:in `each_with_index'
+  /opt/chefdk/embedded/apps/chef/lib/chef/resource_collection.rb:96:in `execute_each_resource'
+  /opt/chefdk/embedded/apps/chef/lib/chef/runner.rb:80:in `converge'
+  /opt/chefdk/embedded/apps/chef/lib/chef/client.rb:345:in `converge'
+  /opt/chefdk/embedded/apps/chef/lib/chef/client.rb:431:in `do_run'
+  /opt/chefdk/embedded/apps/chef/lib/chef/client.rb:213:in `block in run'
+  /opt/chefdk/embedded/apps/chef/lib/chef/client.rb:207:in `fork'
+  /opt/chefdk/embedded/apps/chef/lib/chef/client.rb:207:in `run'
+  /opt/chefdk/embedded/apps/chef/lib/chef/application.rb:236:in `run_chef_client'
+  /opt/chefdk/embedded/apps/chef/lib/chef/application/solo.rb:226:in `block in run_application'
+  /opt/chefdk/embedded/apps/chef/lib/chef/application/solo.rb:218:in `loop'
+  /opt/chefdk/embedded/apps/chef/lib/chef/application/solo.rb:218:in `run_application'
+  /opt/chefdk/embedded/apps/chef/lib/chef/application.rb:55:in `run'
+  /opt/chefdk/embedded/apps/chef/bin/chef-solo:25:in `<top (required)>'
+  /usr/bin/chef-solo:34:in `load'
+  /usr/bin/chef-solo:34:in `<main>'
+[2014-09-15T06:27:04+00:00] ERROR: Running exception handlers
+[2014-09-15T06:27:04+00:00] ERROR: Exception handlers complete
+[2014-09-15T06:27:04+00:00] FATAL: Stacktrace dumped to /root/chef-repo/cookbooks/.chef/chef-stacktrace.out
+[2014-09-15T06:27:04+00:00] DEBUG: Mixlib::ShellOut::ShellCommandFailed: execute[runjboss] (jboss::default line 37) had an error: Mixlib::ShellOut::ShellCommandFailed: Expected process to exit with [0], but received '127'
+---- Begin output of bash standalone.sh ----
+STDOUT: =========================================================================
+
+  JBoss Bootstrap Environment
+
+  JBOSS_HOME: /opt/jboss/jboss-as-7.1.1.Final
+
+  JAVA: java
+
+  JAVA_OPTS:  -server -Xms64m -Xmx512m -XX:MaxPermSize=256m -Djava.net.preferIPv4Stack=true -Dorg.jboss.resolver.warning=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Djboss.server.default.config=standalone.xml
+
+=========================================================================
+STDERR: standalone.sh: line 178: java: command not found
+---- End output of bash standalone.sh ----
+Ran bash standalone.sh returned 127
+/opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/mixlib-shellout-1.4.0/lib/mixlib/shellout.rb:257:in `invalid!'
+/opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/mixlib-shellout-1.4.0/lib/mixlib/shellout.rb:244:in `error!'
+/opt/chefdk/embedded/apps/chef/lib/chef/mixin/shell_out.rb:43:in `shell_out!'
+/opt/chefdk/embedded/apps/chef/lib/chef/provider/execute.rb:60:in `block in action_run'
+/opt/chefdk/embedded/apps/chef/lib/chef/mixin/why_run.rb:52:in `call'
+/opt/chefdk/embedded/apps/chef/lib/chef/mixin/why_run.rb:52:in `add_action'
+/opt/chefdk/embedded/apps/chef/lib/chef/provider.rb:156:in `converge_by'
+/opt/chefdk/embedded/apps/chef/lib/chef/provider/execute.rb:59:in `action_run'
+/opt/chefdk/embedded/apps/chef/lib/chef/provider.rb:121:in `run_action'
+/opt/chefdk/embedded/apps/chef/lib/chef/resource.rb:648:in `run_action'
+/opt/chefdk/embedded/apps/chef/lib/chef/runner.rb:49:in `run_action'
+/opt/chefdk/embedded/apps/chef/lib/chef/runner.rb:81:in `block (2 levels) in converge'
+/opt/chefdk/embedded/apps/chef/lib/chef/runner.rb:81:in `each'
+/opt/chefdk/embedded/apps/chef/lib/chef/runner.rb:81:in `block in converge'
+/opt/chefdk/embedded/apps/chef/lib/chef/resource_collection.rb:98:in `block in execute_each_resource'
+/opt/chefdk/embedded/apps/chef/lib/chef/resource_collection/stepable_iterator.rb:116:in `call'
+/opt/chefdk/embedded/apps/chef/lib/chef/resource_collection/stepable_iterator.rb:116:in `call_iterator_block'
+/opt/chefdk/embedded/apps/chef/lib/chef/resource_collection/stepable_iterator.rb:85:in `step'
+/opt/chefdk/embedded/apps/chef/lib/chef/resource_collection/stepable_iterator.rb:104:in `iterate'
+/opt/chefdk/embedded/apps/chef/lib/chef/resource_collection/stepable_iterator.rb:55:in `each_with_index'
+/opt/chefdk/embedded/apps/chef/lib/chef/resource_collection.rb:96:in `execute_each_resource'
+/opt/chefdk/embedded/apps/chef/lib/chef/runner.rb:80:in `converge'
+/opt/chefdk/embedded/apps/chef/lib/chef/client.rb:345:in `converge'
+/opt/chefdk/embedded/apps/chef/lib/chef/client.rb:431:in `do_run'
+/opt/chefdk/embedded/apps/chef/lib/chef/client.rb:213:in `block in run'
+/opt/chefdk/embedded/apps/chef/lib/chef/client.rb:207:in `fork'
+/opt/chefdk/embedded/apps/chef/lib/chef/client.rb:207:in `run'
+/opt/chefdk/embedded/apps/chef/lib/chef/application.rb:236:in `run_chef_client'
+/opt/chefdk/embedded/apps/chef/lib/chef/application/solo.rb:226:in `block in run_application'
+/opt/chefdk/embedded/apps/chef/lib/chef/application/solo.rb:218:in `loop'
+/opt/chefdk/embedded/apps/chef/lib/chef/application/solo.rb:218:in `run_application'
+/opt/chefdk/embedded/apps/chef/lib/chef/application.rb:55:in `run'
+/opt/chefdk/embedded/apps/chef/bin/chef-solo:25:in `<top (required)>'
+/usr/bin/chef-solo:34:in `load'
+/usr/bin/chef-solo:34:in `<main>'
+[2014-09-15T06:27:04+00:00] ERROR: execute[runjboss] (jboss::default line 37) had an error: Mixlib::ShellOut::ShellCommandFailed: Expected process to exit with [0], but received '127'
+---- Begin output of bash standalone.sh ----
+STDOUT: =========================================================================
+
+  JBoss Bootstrap Environment
+
+  JBOSS_HOME: /opt/jboss/jboss-as-7.1.1.Final
+
+  JAVA: java
+
+  JAVA_OPTS:  -server -Xms64m -Xmx512m -XX:MaxPermSize=256m -Djava.net.preferIPv4Stack=true -Dorg.jboss.resolver.warning=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Djboss.server.default.config=standalone.xml
+
+=========================================================================
+STDERR: standalone.sh: line 178: java: command not found
+---- End output of bash standalone.sh ----
+Ran bash standalone.sh returned 127
+[2014-09-15T06:27:04+00:00] FATAL: Chef::Exceptions::ChildConvergeError: Chef run process exited unsuccessfully (exit code 1)
